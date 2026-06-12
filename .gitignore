@@ -1,7 +1,6 @@
 target/
 .idea/
 *.iml
-application.properties
-src/main/resources/application.properties
+
 *.log
 .DS_Store
