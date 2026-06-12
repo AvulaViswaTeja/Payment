@@ -10,5 +10,5 @@ public interface InvoiceClient {
     InvoiceResponseDTO getInvoiceById(@PathVariable Long id);
 
     @PatchMapping("/api/invoices/{id}/status")
-    void updateInvoiceStatus(@PathVariable Long id, @RequestParam String status);
+    void updateInvoiceStatus(@PathVariable("id") Long id, @RequestParam("status") String status);
 }

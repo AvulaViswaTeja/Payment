@@ -62,8 +62,13 @@ public class PaymentService {
         else if (totalPaid > 0) newInvoiceStatus = "PARTIALLY_PAID";
         else newInvoiceStatus = invoice.getStatus();
 
-        try { invoiceClient.updateInvoiceStatus(dto.getInvoiceId(), newInvoiceStatus); }
-        catch (Exception e) { log("Invoice.STATUS_UPDATE_FAILED | InvoiceID: " + dto.getInvoiceId()); }
+        try {
+            invoiceClient.updateInvoiceStatus(dto.getInvoiceId(), newInvoiceStatus);
+        }
+        catch (Exception e) {
+//            e.printStackTrace();
+            log("Invoice.STATUS_UPDATE_FAILED | InvoiceID: " + dto.getInvoiceId());
+        }
 
         log("Payment.PROCESS_SUCCESS | PaymentID: " + saved.getPaymentId()
                 + " | InvoiceID: " + dto.getInvoiceId()
